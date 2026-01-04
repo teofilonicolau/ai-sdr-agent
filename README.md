@@ -3,9 +3,9 @@
     <img src="https://mintlify.s3.us-west-1.amazonaws.com/brightdata/logo/light.svg" width="300" alt="Bright Data Logo">
   </a>
 
-# AI BDR/SDR Agent System
+# TamarAI SDR Agent
 
-Real-time prospecting with multi-agent intelligence and trigger-based personalization.
+Prospecção em tempo real com inteligência multi-agente e personalização baseada em triggers.
 
 <img src="https://img.shields.io/badge/python-3.11+-blue" />
 <img src="https://img.shields.io/badge/OpenAI-API-blueviolet" />
@@ -13,191 +13,181 @@ Real-time prospecting with multi-agent intelligence and trigger-based personaliz
 </div>
 
 <div align="center">
-<img src="https://media.brightdata.com/2025/09/AI-SDR-Agent-demo.gif" alt="AI SDR/BDR Agent Demo">
+<img src="https://media.brightdata.com/2025/09/AI-SDR-Agent-demo.gif" alt="Demonstração do Agente AI SDR/BDR">
 </div>
 
 ---
 
-## Overview
+## Visão Geral
 
-This system uses **5 specialized AI agents**:
-  1. Company Discovery Agent — Find companies matching your ICP
-  2. Trigger Detection Agent — Identify buying signals and optimal timing
-  3. Contact Research Agent — Extract decision-maker information
-  4. Message Generation Agent — Create personalized outreach
-  5. Pipeline Manager — Score leads and integrate with CRM
+Este sistema utiliza **5 agentes de IA especializados**:
+  1. **Agente de Descoberta de Empresas** — Encontra empresas que correspondem ao seu ICP (Perfil de Cliente Ideal)
+  2. **Agente de Detecção de Triggers** — Identifica sinais de compra e o momento ideal
+  3. **Agente de Pesquisa de Contatos** — Extrai informações de tomadores de decisão
+  4. **Agente de Geração de Mensagens** — Cria abordagens personalizadas
+  5. **Gerente de Pipeline** — Pontua leads e integra com CRM
 
-[**Visit the step-by-step guide on our blog**](https://brightdata.com/blog/ai/ai-sdr-agent-with-web-mcp)
+[**Visite o guia passo a passo no nosso blog**](https://brightdata.com/blog/ai/ai-sdr-agent-with-web-mcp)
 
 ---
 
-## Prerequisites
+## Pré-requisitos
 
 - Python 3.11+
-- Node.js and npm (for MCP server)
-- API Keys:
-    - [OpenAI API key](https://platform.openai.com/api-keys)
-    - [Bright Data](https://brightdata.com/) account with Web MCP access
-    - HubSpot CRM credentials (optional)
+- Node.js e npm (para o servidor MCP)
+- Chaves de API:
+    - [Chave da API OpenAI](https://platform.openai.com/api-keys)
+    - Conta [Bright Data](https://brightdata.com/) com acesso ao Web MCP
+    - Credenciais do HubSpot CRM (opcional)
 
 ---
 
-## Quick Start
+## Início Rápido
 
-1. **Clone and setup:**
+1. **Clone e configure:**
 
-        git clone <repository>
-        cd AI_BDR_SDR
+        git clone https://github.com/teofilonicolau/ai-sdr-agent.git
+        cd ai-sdr-agent
         python setup.py
 
-2. **Configure API keys:**  
-   Edit `.env` file with your credentials:
+2. **Configure as chaves de API:**  
+   Edite o arquivo `.env` com suas credenciais:
 
-        OPENAI_API_KEY=your_key_here
-        BRIGHT_DATA_API_TOKEN=your_token_here
-        HUBSPOT_API_KEY=your_hubspot_key_here
+        OPENAI_API_KEY=sua_chave_aqui
+        BRIGHT_DATA_API_TOKEN=seu_token_aqui
+        HUBSPOT_API_KEY=sua_chave_hubspot_aqui
 
-3. **Test the system:**
+3. **Teste o sistema:**
 
         python test_workflow.py
 
-4. **Run the application:**
+4. **Execute a aplicação:**
 
         streamlit run ai_bdr_system.py
 
 ---
 
-## Features
+## Funcionalidades
 
-- Multi-Agent Workflow: Parallel processing, real-time data, scoring, CRM integration
-- Trigger Intelligence: Hiring spikes, funding, leadership changes, expansion
-- Personalization Engine: Context-aware, trigger-based, multi-channel, A/B testing
-- Export & Integration: CSV, HubSpot sync, field mapping, bulk contacts
+- **Fluxo de Trabalho Multi-Agente:** Processamento paralelo, dados em tempo real, pontuação e integração com CRM
+- **Inteligência de Triggers:** Picos de contratação, financiamento, mudanças de liderança, expansão
+- **Motor de Personalização:** Sensível ao contexto, baseado em triggers, multi-canal, testes A/B
+- **Exportação e Integração:** CSV, sincronização com HubSpot, mapeamento de campos, contatos em massa
 
 ---
 
-## System Architecture
+## Arquitetura do Sistema
 
     ┌─────────────────────────────────────────────────────────────┐
-    │                    Streamlit Frontend                      │
+    │                    Frontend Streamlit                       │
     ├─────────────────────────────────────────────────────────────┤
-    │                    CrewAI Orchestration                    │
+    │                    Orquestração CrewAI                      │
     ├─────────────────────────────────────────────────────────────┤
-    │  Discovery │ Triggers │ Contacts │ Messages │ Pipeline      │
-    │   Agent    │  Agent   │  Agent   │  Agent   │ Manager       │
+    │  Descoberta │ Triggers │ Contatos │ Mensagens │ Gerente     │
+    │   Agente    │  Agente  │  Agente  │  Agente   │ de Pipeline │
     ├─────────────────────────────────────────────────────────────┤
     │    Bright Data MCP │ OpenAI │ HubSpot API                  │
     └─────────────────────────────────────────────────────────────┘
 
 ---
 
-## Configuration
+## Configuração
 
-### ICP Targeting
-  - Industry selection (SaaS, FinTech, E-commerce, etc.)
-  - Company size ranges
-  - Geographic targeting
-  - Custom criteria
+### Segmentação de ICP (Perfil de Cliente Ideal)
+  - Seleção de Indústria (SaaS, FinTech, E-commerce, etc.)
+  - Faixas de tamanho da empresa
+  - Segmentação geográfica
+  - Critérios personalizados
 
-### Message Types
-  - Cold email campaigns
-  - LinkedIn connection requests
-  - Follow-up sequences
-  - Custom templates
+### Tipos de Mensagem
+  - Campanhas de e-mail frio (Cold Email)
+  - Solicitações de conexão no LinkedIn
+  - Sequências de follow-up
+  - Templates personalizados
 
-### Lead Scoring
-  - ICP match score (30%)
-  - Trigger event score (30%)
-  - Contact quality score (20%)
-  - Timing optimization (20%)
+### Pontuação de Leads (Lead Scoring)
+  - Pontuação de correspondência de ICP (30%)
+  - Pontuação de evento de trigger (30%)
+  - Pontuação de qualidade do contato (20%)
+  - Otimização de timing (20%)
 
 ---
 
-## API Integrations
+## Integrações de API
 
 ### Bright Data MCP
-  - Real-time web scraping
-  - LinkedIn company data
-  - News and press releases
-  - Contact information
+  - Web scraping em tempo real
+  - Dados de empresas do LinkedIn
+  - Notícias e comunicados de imprensa
+  - Informações de contato
 
 ### OpenAI GPT-4
-  - Message personalization
-  - Content generation
-  - Trigger analysis
-  - Lead qualification
+  - Personalização de mensagens
+  - Geração de conteúdo
+  - Análise de triggers
+  - Qualificação de leads
 
 ### HubSpot CRM
-  - Contact creation/updates
-  - Lead scoring sync
-  - Custom properties
-  - Pipeline management
+  - Criação/atualização de contatos
+  - Sincronização de pontuação de leads
+  - Propriedades personalizadas
+  - Gerenciamento de pipeline
 
 ---
 
-## Troubleshooting
+## Solução de Problemas
 
-1. MCP Connection Errors
+1. **Erros de Conexão MCP**
 
         npm install -g @brightdata/mcp
 
-2. Missing Dependencies
+2. **Dependências Ausentes**
 
         pip install -r requirements.txt
 
-3. API Key Errors
+3. **Erros de Chave de API**
 
-    - Verify keys in `.env` file
-    - Check API quotas and permissions
+    - Verifique as chaves no arquivo `.env`
+    - Verifique as cotas e permissões da API
 
-### Validation
+### Validação
 
         python test_workflow.py
 
 ---
 
-## Performance Metrics
+## Métricas de Desempenho
 
-- Companies discovered: 15-25
-- Trigger events: 8-15
-- Quality contacts: 40-60
-- Response rate: 15-25%
-- Meeting bookings: 3-8%
-
----
-
-## Security & Privacy
-
-- API keys stored in environment variables
-- No data persistence beyond session
-- GDPR-compliant contact handling
-- Rate limiting for API protection
+- Empresas descobertas: 15-25
+- Eventos de trigger: 8-15
+- Contatos de qualidade: 40-60
+- Taxa de resposta: 15-25%
+- Agendamento de reuniões: 3-8%
 
 ---
 
-## License
+## Segurança e Privacidade
 
-This project is for educational and internal demo purposes.
-
----
-
-## Learn More
-
-- [How Bright Data's Web MCP works](https://docs.brightdata.com/mcp-server/overview)
-- [Streamlit Documentation](https://docs.streamlit.io/)
-- [OpenAI Platform Docs](https://platform.openai.com/docs)
-- [CrewAI Docs](https://docs.crewai.com/)
+- Chaves de API armazenadas em variáveis de ambiente
+- Sem persistência de dados além da sessão
+- Manuseio de contatos em conformidade com GDPR
+- Limite de taxa (rate limiting) para proteção da API
 
 ---
 
-**Ready to elevate your sales development? Deploy your own AI SDR Agent and transform manual outreach into automated, qualified pipeline—instantly!**
+## Licença
 
-<p align="center">
-  <a href="https://brightdata.com/cp/start" target="_blank" style="text-decoration:none;">
-    <img src="https://img.shields.io/badge/Get%20Started-%233D7FFC?style=for-the-badge&logo=rocket&logoColor=white" alt="Get Started" style="height: 48px; border-radius: 8px;">
-  </a>
-</p>
+Este projeto é para fins educacionais e de demonstração interna.
 
 ---
 
-**Made with ❤️ using Bright Data & OpenAI**
+## Saiba Mais
+
+- [Como funciona o Web MCP da Bright Data](https://docs.brightdata.com/mcp-server/overview)
+- [Documentação do Streamlit](https://docs.streamlit.io/)
+- [Documentação da Plataforma OpenAI](https://platform.openai.com/docs)
+- [Documentação do CrewAI](https://docs.crewai.com/)
+
+---
+
+**Desenvolvido por TamarAI | Powered by Bright Data & OpenAI**
