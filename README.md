@@ -12,9 +12,7 @@ Prospecção em tempo real com inteligência multi-agente e personalização bas
 <img src="https://img.shields.io/badge/License-MIT-blue" />
 </div>
 
-<div align="center">
-<img src="https://media.brightdata.com/2025/09/AI-SDR-Agent-demo.gif" alt="Demonstração do Agente AI SDR/BDR">
-</div>
+
 
 ---
 
